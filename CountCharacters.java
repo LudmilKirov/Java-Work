@@ -15,28 +15,31 @@ class Main {
                                                if it is not present add it and set the count by 1*/
 
             if (charactersInSentence.containsKey(character)) {
+
                 charactersInSentence.put(character, charactersInSentence.get(character) + 1);
             }
 
             else {
+
                 charactersInSentence.put(character, 1);
             }
 
         }
 
-        Map<Character,Integer> sortedCharactersInSentence=/*Make a new map and sorted it by the value in increase order*/
+        LinkedHashMap<Character,Integer> sortedCharactersInSentence=/*Make a new map and sorted it by the value in increase order*/
                 charactersInSentence
-                .entrySet()
-                .stream()
-                .sorted(comparingByValue())
-                        .collect(toMap(e->e.getKey(), e->e.getValue()
-                                ,(e1, e2)->e2,LinkedHashMap::new));
+                        .entrySet()
+                        .stream()
+                        .sorted(comparingByValue())
+                        .collect(toMap(e->e.getKey(), e->e.getValue(),
+                               (e1,e2)->e2,LinkedHashMap::new));
+
+          sortedCharactersInSentence.forEach((k,v)-> System.out.println(k +"->"+v));//functional foreach
 
 
-        for (Map.Entry sorted:sortedCharactersInSentence.entrySet()) {/*Using foreach to iterate over
-                                                                       every element and print the maps key and value*/
-            System.out.println(sorted.getKey()+"->"+sorted.getValue());
+     //   for (Map.Entry sorted:sortedCharactersInSentence.entrySet()) {/*Using foreach to iterate over
+                                                                      // every element and print the maps key and value*/
+     //       System.out.println(sorted.getKey()+"->"+sorted.getValue());
 
         }
     }
-}

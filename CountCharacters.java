@@ -32,14 +32,14 @@ class Main {
                         .stream()
                         .sorted(comparingByValue())
                         .collect(toMap(e->e.getKey(), e->e.getValue(),
-                               (e1,e2)->e2,LinkedHashMap::new));
+                                (e1,e2)->e2,LinkedHashMap::new));
 
-          sortedCharactersInSentence.forEach((k,v)-> System.out.println(k +"->"+v));//functional foreach
+        sortedCharactersInSentence.forEach((k,v)-> System.out.println(k +"->"+v));//functional foreach
 
 
-     //   for (Map.Entry sorted:sortedCharactersInSentence.entrySet()) {/*Using foreach to iterate over
-                                                                      // every element and print the maps key and value*/
-     //       System.out.println(sorted.getKey()+"->"+sorted.getValue());
+        //   for (Map.Entry sorted:sortedCharactersInSentence.entrySet()) {/*Using foreach to iterate over
+        // every element and print the maps key and value*/
+        //       System.out.println(sorted.getKey()+"->"+sorted.getValue());
 
-        }
     }
+}

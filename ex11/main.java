@@ -5,22 +5,43 @@ public class main {
 
         Task11 LinkedList = new Task11();
 
-        Task11.ListNode head = new Task11.ListNode(10);
-        LinkedList.display(head);
+        LinkedList.insertAtBegin(1);
+        LinkedList.display();
 
-        Task11.ListNode newNode = LinkedList.insertAtBegin(head, 221);
-        LinkedList.display(newNode);
+        LinkedList.insertAtEnd(2);
+        LinkedList.display();
 
-        Task11.ListNode newNode1 = LinkedList.insertAtBegin(newNode, 2211);
-        LinkedList.display(newNode1);
+        LinkedList.insertAtBegin(3);
+        LinkedList.display();
 
-        System.out.print("Length: "+LinkedList.listLength(newNode1)+"\n");
+        LinkedList.deleteFirst();
+        LinkedList.display();
 
-        Task11.ListNode newNode2 = LinkedList.insertAtEnd(head, 0);
-        LinkedList.display(newNode1);
+        LinkedList.deleteLast();
+        LinkedList.display();
 
-        LinkedList.deleteFirst(newNode1);
-        LinkedList.display(newNode);
+        LinkedList.insertAtEnd(2);
+        LinkedList.insertAtBegin(3);
+
+        LinkedList.deleteNodeByData(1);
+        LinkedList.display();
+
+        LinkedList.deleteLast();
+        LinkedList.display();
+
+        LinkedList.deleteLast();
+        LinkedList.display();
+
+        LinkedList.insertAtBegin(22);
+        LinkedList.display();
+
+        if(LinkedList.findNodeData(22)){
+            System.out.println("Node is in the list");
+        }
+        else{
+            System.out.println("Node is not in the list");
+        }
+
 
     }
 }

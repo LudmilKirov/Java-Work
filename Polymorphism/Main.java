@@ -21,5 +21,7 @@ public class Main {
         System.out.println(Arrays.toString(order.getDetails()));
         System.out.println("Total sum -> "+order.calcTotalCost());
         order.displayVATItems();
+
+
     }
 }

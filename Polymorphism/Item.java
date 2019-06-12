@@ -2,7 +2,7 @@ package Polymorphism;
 
 import java.text.DecimalFormat;
 
-public class Item {
+public  class Item{
    private String unitDescription;
    private double costPerUnit;
    private int numberOfItemsOnSale;
@@ -48,4 +48,6 @@ public class Item {
     public String toString() {
         return String.format("Total : %s cost -> %.2f",getUnitDescription(),calcCost(unitDescription,costPerUnit,numberOfItemsOnSale));
     }
+
+
 }

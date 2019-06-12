@@ -23,7 +23,4 @@ public class VatItem extends Item {
     public VatItem(String unitDescription, double costPerUnit, int numberOfItemsOnSale) {
         super(unitDescription, costPerUnit, numberOfItemsOnSale);
     }
-
-
-
 }

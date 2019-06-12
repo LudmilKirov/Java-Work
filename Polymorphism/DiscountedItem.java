@@ -9,6 +9,7 @@ public class DiscountedItem extends Item {
         return discount;
     }
 
+
     public DiscountedItem(String unitDescription, double costPerUnit, int numberOfItemsOnSale, int minNumberOfItems) {
         super(unitDescription, costPerUnit, numberOfItemsOnSale);
         this.minNumberOfItems = minNumberOfItems;

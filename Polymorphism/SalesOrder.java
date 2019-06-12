@@ -40,8 +40,7 @@ public  class SalesOrder {
     // very Items cost calculate the sum of the every Item
     public double calcTotalCost() {
 
-        orders.forEach((key1, value) -> {
-            int key = key1;
+        orders.forEach((key, value) -> {
             double cost = value.calcCost(value.getUnitDescription(), value.getCostPerUnit(), value.getNumberOfItemsOnSale());
             totalCost+=cost;
         });
@@ -51,8 +50,7 @@ public  class SalesOrder {
 
     //Find in every item if there is VAT in them if yes print it
     public void displayVATItems(){
-        orders.forEach((key1,value)->{
-            int key=key1;
+        orders.forEach((key,value)->{
             if(value.toString().contains("VAT")){
                 System.out.println(value);
             }

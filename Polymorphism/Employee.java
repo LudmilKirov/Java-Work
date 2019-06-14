@@ -1,6 +1,6 @@
 package Polymorphism;
 
-public abstract class Employee {
+public abstract class Employee/* implements java.lang.Comparable<Employee> */{
     private String name;
     private String jobTitle;
 
@@ -27,6 +27,17 @@ public abstract class Employee {
         return 0;
     }
 
+
+  /*  @Override
+    public int compareTo(Employee o) {
+        if(o.getMonthlyWage() == getMonthlyWage()){
+            return  0;
+        }else if(o.getMonthlyWage() > getMonthlyWage()){
+            return 1;
+        }
+        return -1;
+    }*/
+
     @Override
     public String toString() {
         return "Employee" +
@@ -34,4 +45,18 @@ public abstract class Employee {
                 ", jobTitle = " + jobTitle+" ,"
                 ;
     }
+
+//    public void S_Wrong_Principle(Employee e){
+//        if(e instanceof ContractEmployee){
+//            System.out.println();
+//        }
+//        else{
+//            System.err.printf("");
+//        }
+//    }
+//
+//
+//    public abstract String Speak();
+
+
 }

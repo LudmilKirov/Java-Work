@@ -26,4 +26,6 @@ public class SalariedEmployee extends Employee {
     public String toString() {
         return super.toString()+String.format("Monthly salary %.2f\n",getMonthlyWage());
     }
+
+
 }

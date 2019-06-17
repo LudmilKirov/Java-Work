@@ -1,5 +1,5 @@
 package Polymorphism;
-
+import java.io.Serializable;
 public class ContractBonusEmployee extends ContractEmployee{
     private double bonus;
 

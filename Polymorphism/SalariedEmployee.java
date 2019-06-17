@@ -1,4 +1,5 @@
 package Polymorphism;
+import java.io.Serializable;
 
 public class SalariedEmployee extends Employee {
     public double annualSalary;

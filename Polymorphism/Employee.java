@@ -1,8 +1,12 @@
 package Polymorphism;
+import java.io.*;
 
-public abstract class Employee/* implements java.lang.Comparable<Employee> */{
+
+
+public abstract class Employee implements Serializable/* implements java.lang.Comparable<Employee> */{
     private String name;
     private String jobTitle;
+
 
     public String getName() {
         return name;

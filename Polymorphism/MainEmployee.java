@@ -1,9 +1,11 @@
 package Polymorphism;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.*;
 
 public class MainEmployee {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         Employee pesho = new SalariedEmployee("Pesho", "Bog", 12002);
         Employee gosho = new ContractEmployee("Gosho", "Prezident", 99.99, 160);
@@ -30,6 +32,20 @@ public class MainEmployee {
 
         Collections.sort(pay.list, new test());
         System.out.println(pay.list);
+
+        pay.loadData();
+        System.out.println(pay.list);
+        pay.saveData();
+
+
+        Account account=new Account("Pesho",222.95);
+       Account secure=new SecureAccount("Pro",22);
+
+        System.out.println(account);
+
+        System.out.println(secure);
+
+
     }
 
 }

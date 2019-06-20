@@ -80,6 +80,8 @@ public class Order implements Comparable<Order> {
 
 
     //Check the the cost of the two objects and compare them
+    //Because its double and if the two and one are equal in
+    // integer and one is bigger in double increase the int value of one
     private static  class ByCost implements Comparator<Order> {
         @Override
         public int compare(Order o1, Order o2) {
@@ -87,6 +89,9 @@ public class Order implements Comparable<Order> {
             double two = o2.getCost();
             int newOne=(int)Math.round(one);
             int newTwo=(int)Math.round(two);
+            if(two<one&&newOne==newTwo){
+            newOne++;}
+
             return newTwo - newOne;
         }
     }

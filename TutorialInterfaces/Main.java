@@ -17,9 +17,9 @@ public class Main {
         Date date1=new Date(3,4,1992);
         Date date2=new Date(1,4,1992);
 
-        Order order = new Order(22,"Sss",2.2,date);
-        Order order1 = new Order(1,"OSses",2.6,date1);
-        Order order2=new Order(3,"BOs",1.2,date2);
+        Order order = new Order(22,"Sss",3.3,date);
+        Order order1 = new Order(1,"OSses",2.4,date1);
+        Order order2=new Order(3,"BOs",3.4,date2);
 
 
         date.add(date1);

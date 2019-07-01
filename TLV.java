@@ -15,6 +15,8 @@ public class TLV {
     //Recursive function for BER-TLV Parser
     private static void recursive(String tlvWithoutSpaces) {
         final int FIRST_BYTE = 0;
+        final int TWO_HEXES=4;
+        final int THREE_HEXES=6;
         String newString = tlvWithoutSpaces;
         length = tlvWithoutSpaces.length() / 2;
 
@@ -36,13 +38,13 @@ public class TLV {
             if (byteToHex(last5BitsOfTheFirstByte).equals("1f")) {
                 //So the tag is 2 byte,make the string start after that
                 System.out.printf("Tag is :%s,%s \n", byteToHex(tlvByteArray[0]), byteToHex(tlvByteArray[1]));
-                newString = tlvWithoutSpaces.substring(6);
+                newString = tlvWithoutSpaces.substring(THREE_HEXES);
                 length -= 3;
 
             } else {
                 //The tag is one byte
                 System.out.printf("Tag is :%s \n", byteToHex(tlvByteArray[0]));
-                newString = tlvWithoutSpaces.substring(4);
+                newString = tlvWithoutSpaces.substring(TWO_HEXES);
                 length -= 2;
 
             }
@@ -54,13 +56,13 @@ public class TLV {
                 //Tag is the first two bytes
                 System.out.printf("Tag is :%s,%s  ", byteToHex(tlvByteArray[0]), byteToHex(tlvByteArray[1]));
                 //Length is the third
-                System.out.printf("Length : %s", getDecimal(byteToHex(tlvByteArray[2])));
+                System.out.printf("Length : %s ", getDecimal(byteToHex(tlvByteArray[2])));
                 //Value starts after the first 3 bytes and goes to the end of the value plus  the other 3 bytes
-                System.out.printf("Value : %s\n", tlvWithoutSpaces.substring(6, 6 + (getDecimal(byteToHex(tlvByteArray[2]))) * 2));
+                System.out.printf("Value : %s\n", tlvWithoutSpaces.substring(THREE_HEXES, THREE_HEXES + (getDecimal(byteToHex(tlvByteArray[2]))) * 2));
                 //The new length is 4 for the 2 tags and the length
-                length -= getDecimal(byteToHex(tlvByteArray[2])) + 4;
+                length -= getDecimal(byteToHex(tlvByteArray[2])) + THREE_HEXES;
                 //The new string is from the end of the value till the end
-                newString = tlvWithoutSpaces.substring(6 + (getDecimal(byteToHex(tlvByteArray[2]))) * 2);
+                newString = tlvWithoutSpaces.substring(THREE_HEXES + (getDecimal(byteToHex(tlvByteArray[2]))) * 2);
             }
             else {
                 //Same as the previous,but here is only tag and
@@ -68,10 +70,10 @@ public class TLV {
                 System.out.println("Primitive");
                 System.out.printf("Tag is :%s ", byteToHex(tlvByteArray[0]));
                 System.out.printf("Length : %s ", getDecimal(byteToHex(tlvByteArray[1])));
-                System.out.printf("Value : %s\n", tlvWithoutSpaces.substring(4, 4 + (getDecimal(byteToHex((tlvByteArray[1])))) * 2));
+                System.out.printf("Value : %s\n", tlvWithoutSpaces.substring(4, TWO_HEXES + (getDecimal(byteToHex((tlvByteArray[1])))) * 2));
 
-                length -= (getDecimal(byteToHex(tlvByteArray[1]))) + 2;
-                newString = tlvWithoutSpaces.substring(4 + (getDecimal(byteToHex((tlvByteArray[1])))) * 2);
+                length -= (getDecimal(byteToHex(tlvByteArray[1]))) + TWO_HEXES;
+                newString = tlvWithoutSpaces.substring(TWO_HEXES + (getDecimal(byteToHex((tlvByteArray[1])))) * 2);
 
             }
         }
@@ -87,12 +89,16 @@ public class TLV {
 
     //This function returns decimal for given Hex
     public static int getDecimal(String hex){
+        //This is the Hex values
         String digits = "0123456789ABCDEF";
+        //Make it to upper case
         hex = hex.toUpperCase();
         int val = 0;
+        //Until the end of the string
         for (int i = 0; i < hex.length(); i++)
         {
             char c = hex.charAt(i);
+            //Get the decimal value
             int d = digits.indexOf(c);
             val = 16*val + d;
         }

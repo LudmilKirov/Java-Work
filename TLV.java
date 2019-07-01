@@ -36,7 +36,7 @@ public class TLV {
             if (byteToHex(last5BitsOfTheFirstByte).equals("1f")) {
                 //So the tag is 2 byte,make the string start after that
                 System.out.printf("Tag is :%s,%s \n", byteToHex(tlvByteArray[0]), byteToHex(tlvByteArray[1]));
-                newString = tlvWithoutSpaces.substring(10);
+                newString = tlvWithoutSpaces.substring(6);
                 length -= 3;
 
             } else {
@@ -86,16 +86,15 @@ public class TLV {
     }
 
     //This function returns decimal for given Hex
-    public static int getDecimal(String hex) {
-        //This is the Hex values
+    public static int getDecimal(String hex){
         String digits = "0123456789ABCDEF";
-        //Make it to upper case
         hex = hex.toUpperCase();
         int val = 0;
-        //Until the end of the string
-        for (int i = 0; i < hex.length(); i++) {
+        for (int i = 0; i < hex.length(); i++)
+        {
             char c = hex.charAt(i);
-            val = digits.indexOf(c);
+            int d = digits.indexOf(c);
+            val = 16*val + d;
         }
         return val;
     }

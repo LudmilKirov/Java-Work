@@ -1,9 +1,0 @@
-1,Alan,job description 1,10000
-2,Bob,job description 2,10.0,50.0
-3,Carol,job description 3,7.50,70.0,50.0
-1,Denis,job description 4,8000
-2,Eric,job description 5,12.0,40.0
-3,Frank,job description 6,11.50,50.0,100.0
-1,George,job description 7,15000
-2,Harry,job description 8,15.0,20.0
-3,Ian,job description 9,17.50,12.0,150.0

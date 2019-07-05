@@ -4,27 +4,24 @@ import java.io.Serializable;
 public class ContractEmployee extends Employee {
     private double hourlyRate;
     private double hoursWorked;
-
+    //Constructor
     public ContractEmployee(String name, String jobTitle, double hourlyRate, double hoursWorked) {
         super.setName(name);
         super.setJobTitle(jobTitle);
         this.hourlyRate = hourlyRate;
         this.hoursWorked = hoursWorked;
     }
-
-    public double getHourlyRate() {
+    //Getters and setters
+    private double getHourlyRate() {
         return hourlyRate;
     }
-
-    public void setHourlyRate(double hourlyRate) {
+    private void setHourlyRate(double hourlyRate) {
         this.hourlyRate = hourlyRate;
     }
-
-    public double getHoursWorked() {
+    private double getHoursWorked() {
         return hoursWorked;
     }
-
-    public void setHoursWorked(double hoursWorked) {
+    private void setHoursWorked(double hoursWorked) {
         this.hoursWorked = hoursWorked;
     }
 
@@ -34,16 +31,11 @@ public class ContractEmployee extends Employee {
     public double getMonthlyWage() {
         return hourlyRate * hoursWorked;
     }
-
-
+    //Give the Contract employee proper output
     @Override
     public String toString() {
         return super.toString() + String.format("Monthly salary %.2f\n", getMonthlyWage());
     }
 
-//    @Override
-//    public String Speak() {
-//        return " ss";
-//    }
 }
 

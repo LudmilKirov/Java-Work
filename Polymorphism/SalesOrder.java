@@ -8,31 +8,24 @@ public  class SalesOrder {
     public double totalCost;
     private int maxOrder=0;
     public LinkedHashMap<Integer,Item> orders = new LinkedHashMap<>();
-
+    //Constructor
+    public SalesOrder() {
+    }
+    //Getters and setters
     public int getMaxOrder() {
         return maxOrder;
     }
-
     public void setMaxOrder(int maxOrder) {
         this.maxOrder = maxOrder;
     }
-
-
-
-    public SalesOrder() {
-
-    }
-
+    //Add items in the map
     public void add(Item next){
         orders.put(maxOrder,next);
         maxOrder++;
-
     }
 
- public String[] getDetails(){
-     return new String[]{
-             orders.toString()
-     };
+     public String[] getDetails(){
+         return new String[]{orders.toString()};
     }
 
 
@@ -50,6 +43,7 @@ public  class SalesOrder {
 
     //Find in every item if there is VAT in them if yes print it
     public void displayVATItems(){
+        //Functional foreach
         orders.forEach((key,value)->{
             if(value.toString().contains("VAT")){
                 System.out.println(value);

@@ -12,11 +12,7 @@ public class Order implements Comparable<Order> {
 
     public ArrayList<Order> list = new ArrayList<>();
 
-    public void add(Order order) {
-        if (!list.contains(order)) {
-            list.add(order);
-        }
-    }
+    //Constructor
     public Order(int number, String description, double cost, Date date) {
         this.number = number;
         this.description = description;
@@ -24,52 +20,42 @@ public class Order implements Comparable<Order> {
         this.date = date;
     }
 
-    @Override
-    public String toString() {
-        return "Order " +
-                "number=" + number +
-                ", description='" + description + '\'' +
-                ", cost=" + cost +
-                date
-                ;
-    }
-
-    public int getNumber() {
+    //Getters and setters
+    private int getNumber() {
         return number;
     }
-
-    public void setNumber(int number) {
+    private void setNumber(int number) {
         this.number = number;
     }
-
-    public String getDescription() {
+    private String getDescription() {
         return description;
     }
-
-    public void setDescription(String description) {
+    private void setDescription(String description) {
         this.description = description;
     }
-
-    public double getCost() {
+    private double getCost() {
         return cost;
     }
-
-    public void setCost(double cost) {
+    private void setCost(double cost) {
         this.cost = cost;
     }
-
-    public Date getDate() {
+    private Date getDate() {
         return date;
     }
-
-    public void setDate(Date date) {
+    private void setDate(Date date) {
         this.date = date;
     }
 
+    //Method that add orders
+    public void add(Order order) {
+        if (!list.contains(order)) {
+            list.add(order);
+        }
+    }
+
+    //Compare orders
     @Override
     public int compareTo(Order o) {
-
-
         if(o.getNumber() == getNumber()){
             return  0;
         }else if(o.getNumber() > getNumber()){
@@ -77,7 +63,6 @@ public class Order implements Comparable<Order> {
         }
         return -1;
     }
-
 
     //Check the the cost of the two objects and compare them
     //Because its double and if the two and one are equal in
@@ -94,5 +79,16 @@ public class Order implements Comparable<Order> {
 
             return newTwo - newOne;
         }
+    }
+
+    //Output for the orders
+    @Override
+    public String toString() {
+        return "Order " +
+                "number=" + number +
+                ", description='" + description + '\'' +
+                ", cost=" + cost +
+                date
+                ;
     }
 }

@@ -1,3 +1,5 @@
+//Class that give the values for
+// the box and check if all the values are there
 public class Box {
 
     private double length;
@@ -5,6 +7,7 @@ public class Box {
     private double width;
     private boolean full=false;
 
+    //Constructor for the box
     public Box(double length , double width, double height){
 
   this.length=length;
@@ -12,32 +15,33 @@ public class Box {
   this.height=height;
 
     }
-
-    public double getWidth() {
+    //Getters and setters
+    private double getWidth() {
         return width;
     }
 
-    public void setWidth(double width) {
+    private void setWidth(double width) {
         this.width = width;
     }
 
-    public double getHeight() {
+    private double getHeight() {
         return height;
     }
 
-    public void setHeight(double height) {
+    private void setHeight(double height) {
         this.height = height;
     }
 
-    public double getLength() {
+    private double getLength() {
         return length;
     }
 
-    public void setLength(double lenght) {
+    private void setLength(double lenght) {
         this.length = lenght;
     }
 
-    public boolean isFull()//Check if there is 0 value of the Box if there is 0 the box is not full
+    //Check if there is 0 value of the Box if there is 0 the box is not full
+    public boolean isFull()
     {
         int area=0;
         area=(int)(this.length*this.height*this.width);
@@ -49,8 +53,12 @@ public class Box {
     }
 
 
-
+    //ToString method that give the right output for the box
     public String toString(){
-        return "Lenght: "+length+ " " +" Height"+ " " + height+ " Width:" +" "  +width+  " "+ "Is Full ? "+isFull();
+        return "Lenght: "+length+ " "
+                +" Height"+ " "
+                + height+ " Width:"
+                +" "  +width+  " "
+                + "Is Full ? "+isFull();
 }
 }

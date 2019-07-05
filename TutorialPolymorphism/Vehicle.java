@@ -8,39 +8,38 @@ public abstract class Vehicle {
     private boolean haveATrailer;
     private ArrayList<Vehicle> list=new ArrayList<>();
 
+    //Constructor
     public Vehicle(String registrationNumber, double timeOfPayment, boolean haveATrailer) {
         this.registrationNumber = registrationNumber;
         this.timeOfPayment = timeOfPayment;
         this.haveATrailer = haveATrailer;
     }
 
+    //Getters and setters
     public String getRegistrationNumber() {
         return registrationNumber;
     }
-
     public void setRegistrationNumber(String registrationNumber) {
         this.registrationNumber = registrationNumber;
     }
-
     public double getTimeOfPayment() {
         return timeOfPayment;
     }
-
     public void setTimeOfPayment(double timeOfPayment) {
         this.timeOfPayment = timeOfPayment;
     }
-
     public boolean getHaveATrailer() {
         return haveATrailer;
     }
+    public void setHaveATrailer(boolean haveATrailer) {
+        this.haveATrailer = haveATrailer;
+    }
+
+    //Method for calculating the cost for Trailer
     //If have a trailer multiply by 1.5
     public double getTrailerCost() {
         double trailerCost = 1.5;
         return trailerCost;
-    }
-
-    public void setHaveATrailer(boolean haveATrailer) {
-        this.haveATrailer = haveATrailer;
     }
 
     public abstract  double calcCost();
@@ -51,6 +50,7 @@ public abstract class Vehicle {
             list.add(vehicle);
         }
     }
+
     //Iterate through all of the vehicles
     // in the list and print the information for them
     public String allVehicle() {
@@ -73,6 +73,7 @@ public abstract class Vehicle {
         return totalCost;
     }
 
+    //Print all HGV vehicles
     public void getHGVInfo() {
         //For each vehicle of HGV class prints it's info
         for (Vehicle vehicle : list) {
@@ -81,6 +82,8 @@ public abstract class Vehicle {
             }
         }
     }
+
+    //Output for the Vehicle
     @Override
     public String toString() {
         return

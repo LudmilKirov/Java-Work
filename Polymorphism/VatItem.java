@@ -4,6 +4,14 @@ public class VatItem extends Item {
     //For 20% VAT in Bulgaria
     private double VAT=0.8;
 
+    //Constructor
+    public VatItem(String unitDescription, double costPerUnit, int numberOfItemsOnSale) {
+        super(unitDescription, costPerUnit, numberOfItemsOnSale);
+    }
+    //Getter
+    public double getVAT() {
+        return VAT;
+    }
     //Calculate the cost by multiplying the VAT with the old price
     @Override
     public double calcCost(String unitDescription, double costPerUnit, int numberOfItemsOnSale) {
@@ -16,11 +24,5 @@ public class VatItem extends Item {
                 ,getCostPerUnit(),getNumberOfItemsOnSale())*1.25);
     }
 
-    public double getVAT() {
-        return VAT;
-    }
 
-    public VatItem(String unitDescription, double costPerUnit, int numberOfItemsOnSale) {
-        super(unitDescription, costPerUnit, numberOfItemsOnSale);
-    }
 }

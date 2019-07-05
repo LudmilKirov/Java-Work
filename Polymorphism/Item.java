@@ -6,34 +6,29 @@ public  class Item{
    private String unitDescription;
    private double costPerUnit;
    private int numberOfItemsOnSale;
-
+    //Constructor
     public Item(String unitDescription, double costPerUnit, int numberOfItemsOnSale) {
         this.unitDescription = unitDescription;
         this.costPerUnit = costPerUnit;
         this.numberOfItemsOnSale = numberOfItemsOnSale;
     }
-
-    public String getUnitDescription() {
+    //Getters and setters
+    private String getUnitDescription() {
         return unitDescription;
     }
-
-    public void setUnitDescription(String unitDescription) {
+    private void setUnitDescription(String unitDescription) {
         this.unitDescription = unitDescription;
     }
-
-    public double getCostPerUnit() {
+    private double getCostPerUnit() {
         return costPerUnit;
     }
-
-    public void setCostPerUnit(double costPerUnit) {
+    private void setCostPerUnit(double costPerUnit) {
         this.costPerUnit = costPerUnit;
     }
-
-    public int getNumberOfItemsOnSale() {
+    private int getNumberOfItemsOnSale() {
         return numberOfItemsOnSale;
     }
-
-    public void setNumberOfItemsOnSale(int numberOfItemsOnSale) {
+    private void setNumberOfItemsOnSale(int numberOfItemsOnSale) {
         this.numberOfItemsOnSale = numberOfItemsOnSale;
     }
 

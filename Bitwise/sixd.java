@@ -1,5 +1,6 @@
 package Bitwise;
-
+//Program that check the
+// MSB if it is 0 return 0 else 1
 public class sixd {
     public static void main(String[] args) {
         int maskLSB;

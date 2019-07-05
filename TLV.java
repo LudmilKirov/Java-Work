@@ -1,12 +1,16 @@
 import java.util.Scanner;
-
+//Make a program that from given input give
+// the tag value lenght for the primitive
+// data  and tag for the constructed data
 public class TLV {
 
     private static int length;
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        //Get the input
         String tlv = scanner.nextLine();
+        //Remove the spaces if there is any
         String tlvWithoutSpaces = tlv.replace(" ", "");
         recursive(tlvWithoutSpaces);
 
@@ -18,6 +22,8 @@ public class TLV {
         final int TWO_HEXES=4;
         final int THREE_HEXES=6;
         String newString = tlvWithoutSpaces;
+        //Get the lenght divided by 2
+        // ,because the numbers a grouped by two
         length = tlvWithoutSpaces.length() / 2;
 
         //This is the base case when the length is equal or below zero return;

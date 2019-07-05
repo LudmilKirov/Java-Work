@@ -1,7 +1,5 @@
 package ex13;
 
-import inheritance.Manager;
-
 public class Rectangles {
 
     private int left;
@@ -9,45 +7,42 @@ public class Rectangles {
     private int width;
     private int height;
 
-
-
-
     public Rectangles(int left, int bottomY, int width, int height) {
         this.left = left;
         this.bottomY = bottomY;
         this.width = width;
         this.height = height;
     }
-
-    public int getWidth() {
+    //Getters and setters
+    private int getWidth() {
         return width;
     }
 
-    public void setWidth(int width) {
+    private void setWidth(int width) {
         this.width = width;
     }
 
-    public int getHeight() {
+    private int getHeight() {
         return height;
     }
 
-    public void setHeight(int height) {
+    private void setHeight(int height) {
         this.height = height;
     }
 
-    public int getLeft() {
+    private int getLeft() {
         return left;
     }
 
-    public void setLeft(int left) {
+    private void setLeft(int left) {
         this.left = left;
     }
 
-    public int getBottomY() {
+    private int getBottomY() {
         return bottomY;
     }
 
-    public void setBottomY(int bottomY) {
+    private void setBottomY(int bottomY) {
         this.bottomY = bottomY;
     }
 
@@ -61,7 +56,10 @@ public class Rectangles {
         int girlRight=girl.left+girl.width;
         int girlTop=girl.bottomY+girl.height;
         //Check if the two rectangles are not matching
-        return boyRight<girl.left||girlRight<boy.left||boyTop<girl.bottomY||girlTop<boy.bottomY;
+        return boyRight<girl.left
+                ||girlRight<boy.left
+                ||boyTop<girl.bottomY
+                ||girlTop<boy.bottomY;
     }
 
     //TODO add calculate area
@@ -94,9 +92,13 @@ public class Rectangles {
 
             area = (minTop - maxBottom) * (minRight - maxLeft);
 
-            System.out.printf("Matching points: \n leftX %d\nrightX %d\nbottomY %d\ntopY %d\nArea: %d",maxLeft,minRight,maxBottom,minTop,area);
+            System.out.printf("Matching points: \n " +
+                    "leftX %d\n" +
+                    "rightX %d\n" +
+                    "bottomY %d\n" +
+                    "topY %d\n" +
+                    "Area: %d",maxLeft,minRight,maxBottom,minTop,area);
         }
     }
-
 }
 

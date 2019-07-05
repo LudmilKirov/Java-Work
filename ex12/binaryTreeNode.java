@@ -14,35 +14,37 @@ public class binaryTreeNode {
         this.left = null;
     }
 
-    public int getValue() {
+    //Getters and setters
+    private int getValue() {
         return value;
     }
 
-    public void setValue(int value) {
+    private void setValue(int value) {
         this.value = value;
     }
 
-    public binaryTreeNode getLeft() {
+    private binaryTreeNode getLeft() {
         return left;
     }
 
-    public void setLeft(binaryTreeNode left) {
+    private void setLeft(binaryTreeNode left) {
         this.left = left;
     }
 
-    public binaryTreeNode getRight() {
+    private binaryTreeNode getRight() {
         return right;
     }
 
-    public void setRight(binaryTreeNode right) {
+    private void setRight(binaryTreeNode right) {
         this.right = right;
     }
 
-    public void insert(binaryTreeNode node, int value) {
+    private void insert(binaryTreeNode node, int value) {
 
         //If the value is bellow root value,goes to left
         if (value < node.value) {
-            //if it is not empty,goes and check the left value and root value
+            //if it is not empty,goes and check
+            // the left value and root value
             if (node.left != null) {
                 insert(node.left, value);
             }
@@ -55,7 +57,8 @@ public class binaryTreeNode {
         }
         //If the value is bigger that the root value,goes to right
         else if (value > node.value) {
-            //If there is right value go and check the new value with the above value
+            //If there is right value go and check
+            // the new value with the above value
             if (node.right != null) {
                 insert(node.right, value);
             }
@@ -81,16 +84,22 @@ public class binaryTreeNode {
             System.out.println("Need at least two elements for direction to find second largest");
             return 0;
         }
-        //Currently at the largest.So if the largest have left
-        // direction the second largest is the largest of the left direction
+        //Currently at the largest.
+        // So if the largest have left
+        // direction the second largest
+        // is the largest of the left direction
         if ((rootNode.left != null) && (rootNode.right == null)) {
             return biggest(rootNode.left);
         }
-        //  If there is one more element to the right,the current is the second biggest
-        if (rootNode.right != null && rootNode.right.left == null && rootNode.right.right == null) {
+        //  If there is one more element to
+        //  the right,the current is the second biggest
+        if (rootNode.right != null
+                && rootNode.right.left == null
+                && rootNode.right.right == null) {
             return rootNode.value;
         }
-        //If there is more than one element to the right,step to the right
+        //If there is more than one element
+        // to the right,step to the right
         return findSecondBiggest(rootNode.right);
     }
 

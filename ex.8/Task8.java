@@ -1,15 +1,16 @@
 import java.util.Scanner;
-
+//Make a Ceaser cipher that can decode and encode user input
 public class Task8 {
     public static void main(String[] args) {
         Scanner scanner=new Scanner(System.in);
-
+        //Get the user input
         System.out.printf("Enter your message");
         String message=scanner.nextLine();
 
         System.out.printf("Enter the number of rotates");
         int rotate=Integer.parseInt(scanner.nextLine());
-
+        //If the number of rotates is bigger
+        // than the alphabet letters substract it from 26
         if(rotate>25){
             rotate-=26;
         }
@@ -29,10 +30,8 @@ public class Task8 {
         char[] newMessage=message.toCharArray();
 
         for (int i = 0; i <message.length() ; i++) {
-
             //Check if it is lower case
             if(newMessage[i]>='a'&& newMessage[i]<='z') {
-
                 /*Subtract 26 so we can start from a*/
                 if (newMessage[i] + rotate > 122) {
                     newMessage[i] = (char) (newMessage[i] + rotate - 26);
@@ -47,8 +46,7 @@ public class Task8 {
             else{
 
                 //Check if the rotate plus ASCII value of the letter is above the last letter Z
-                if(newMessage[i]+rotate>90)
-                {
+                if(newMessage[i]+rotate>90) {
                     //Subtract 26 so we can start from A
                     newMessage[i]=(char)(newMessage[i]+rotate-26);
                 }
@@ -97,7 +95,6 @@ public class Task8 {
             }
 
         }
-
         return message.copyValueOf(newMessage);
     }
 }

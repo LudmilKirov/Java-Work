@@ -21,11 +21,12 @@ public class PayRoll {
     public void compareTo() {
     }
 
+    //This is removed and is used the Comparable class
     //The wages are sorted by descending order,to be sort
     // in ascending just remove the .reversed()
-    public void sortByWages() {
-        //   list.sort(Comparator.comparing(Employee::getMonthlyWage).reversed());
-    }
+//    public void sortByWages() {
+//           list.sort(Comparator.comparing(Employee::getMonthlyWage).reversed());
+//    }
 
     public void setContractHours(String name, int hours) {
         //Go through every employee and the given name is in ContractedEmployee

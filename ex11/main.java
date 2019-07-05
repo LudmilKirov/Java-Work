@@ -1,4 +1,9 @@
 package ex11;
+//Make a singly linked list that have
+// this functions: add first,
+//add last , delete first , delete last
+//delete node by data , find node by data ,
+//and print the list
 
 public class main {
     public static void main(String[] args) {
@@ -41,7 +46,5 @@ public class main {
         else{
             System.out.println("Node is not in the list");
         }
-
-
     }
 }

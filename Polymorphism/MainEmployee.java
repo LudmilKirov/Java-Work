@@ -14,7 +14,6 @@ public class MainEmployee {
 
         PayRoll pay = new PayRoll();
 
-
         pay.add(ivan);
         pay.add(gosho);
         pay.add(pesho);
@@ -23,12 +22,11 @@ public class MainEmployee {
 
         pay.setContractHours("Gosho", 1);
         System.out.println(String.format("Total sum: %.2f", pay.getCompanyMonthlyWage()));
-
         System.out.println(pay.getCompanyDetails());
 
-//        pay.resetContractHours();
-//        System.out.println(pay.getCompanyDetails());
-      /* pay.sortByWages();*/
+        pay.resetContractHours();
+        System.out.println(pay.getCompanyDetails());
+        //pay.sortByWages();
 
         Collections.sort(pay.list, new test());
         System.out.println(pay.list);
@@ -37,15 +35,11 @@ public class MainEmployee {
         System.out.println(pay.list);
         pay.saveData();
 
-
         Account account=new Account("Pesho",222.95);
-       Account secure=new SecureAccount("Pro",22);
+        Account secure=new SecureAccount("Pro",22);
 
         System.out.println(account);
-
         System.out.println(secure);
-
-
     }
 
 }

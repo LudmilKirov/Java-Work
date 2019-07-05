@@ -1,5 +1,6 @@
 import java.util.Scanner;
-
+//Make a application which calculate if the year is leap or not.
+//And if it is bellow 1582 give a error.
 public class Task7 {
     public static void main(String[] args) {
         Scanner scanner=new Scanner(System.in);
@@ -22,7 +23,6 @@ public class Task7 {
             }
 
             else {
-
                 System.out.printf("The year %d is not leap\n", year);
             }
         }

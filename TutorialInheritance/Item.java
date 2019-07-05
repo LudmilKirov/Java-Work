@@ -10,8 +10,7 @@ public  class Item {
     private int yearOfPublishing;
     private int pages;
 
-
-
+    //Constructor
     public Item( String title,String nameOfThePrintingHouse, int yearOfPublishing, String authorName, int pages) {
         this.title=title;
         this.nameOfThePrintingHouse=nameOfThePrintingHouse;
@@ -19,33 +18,30 @@ public  class Item {
         this.pages = pages;
     }
 
+    //Getters and setters
     public String getTitle() {
         return title;
     }
-
     public void setTitle(String title) {
         this.title = title;
     }
     public String getNameOfThePrintingHouse() {
         return nameOfThePrintingHouse;
     }
-
     public int getPages() {
         return pages;
     }
-
     public void setPages(int pages) {
         this.pages = pages;
     }
-
     public int getYearOfPublishing() {
         return yearOfPublishing;
     }
-
     public void setYearOfPublishing(int yearOfPublishing) {
         this.yearOfPublishing = yearOfPublishing;
     }
 
+    //Output for the Item
     @Override
     public String toString() {
         return   "Title: "+title+

@@ -3,14 +3,12 @@ package ex11;
 import java.util.List;
 
 public class Task11 {
-
+    //List head
     private ListNode head;
-
+    //Node data and the connection
     public static class ListNode {
         private int data;
         private ListNode next;
-
-
 
         public ListNode(int data) {
             this.data = data;
@@ -18,6 +16,7 @@ public class Task11 {
         }
     }
 
+    //Method that give the list length
     public int listLength()
     {
         if(head==null){
@@ -37,7 +36,7 @@ public class Task11 {
         return count;
 
     }
-
+    //Method that display the list
     public void display()
     {
         //Check if the the list is empty
@@ -119,18 +118,21 @@ public class Task11 {
         ListNode last=head;
         ListNode previousToLast=null;
 
-        //Until the last node,safe the previous node and move to the next
+        //Until the last node,safe the previous
+        // node and move to the next
         while(last.next != null){
             previousToLast=last;
             last =last.next;
         }
 
-        //if there is one element point the head to null and return
+        //if there is one element point
+        // the head to null and return
         if (previousToLast == null){
             head=null;
             return;
         }
-        //To delete the node point the previous to null
+        //To delete the node point
+        // the previous to null
         previousToLast.next=null;
 
     }
@@ -139,7 +141,8 @@ public class Task11 {
         ListNode current=head;
         ListNode temp=null;
 
-        //If the data is the data of the first node
+        //If the data is the
+        // data of the first node
         if(current != null && current.data==data){
             head=current.next;
             return;
@@ -151,20 +154,24 @@ public class Task11 {
             current=current.next;
         }
 
-        //If the data is not the data of any node of the list-return
+        //If the data is not the data
+        // of any node of the list-return
         if(current==null){
             return;
         }
 
-        //To delete the data,just point the the previous node of the node
-        // with the matching data to the next node of the matching data
+        //To delete the data,just point
+        // the the previous node of the node
+        // with the matching data to the
+        // next node of the matching data
         temp.next=current.next;
 
     }
 
     public boolean findNodeData(int searchKey){
 
-        //If the list is empty print that the list is empty and return false
+        //If the list is empty print that
+        // the list is empty and return false
         if(head==null){
             System.out.println("List is empty");
             return false;

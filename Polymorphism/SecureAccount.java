@@ -5,8 +5,9 @@ import javax.swing.*;
 import java.util.Scanner;
 
 public class SecureAccount extends Account implements PINProtected{
+    //Hardcode the PIN
     private String PIN="3A11";
-
+    //Constructor
     public SecureAccount(String name, double balance) {
         super(name, balance);
 
@@ -41,8 +42,4 @@ public class SecureAccount extends Account implements PINProtected{
         return super.toString();
     }
 
-//    @Override
-//    public String toString() {
-//        return  String.format("%s has a $%.2f",getName(),getBalance());
-//    }
 }

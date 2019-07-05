@@ -1,5 +1,5 @@
 package TutorialInheritance;
-
+//Make a disk change station
 public class MainDisc {
     public static void main(String[] args) {
 

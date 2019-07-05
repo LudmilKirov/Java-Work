@@ -4,12 +4,7 @@ public class DiscountedItem extends Item {
     private int minNumberOfItems = 20;
     //For 20% discount
     private double discount=0.8;
-
-    public double getDiscount() {
-        return discount;
-    }
-
-
+    //Constructor
     public DiscountedItem(String unitDescription, double costPerUnit, int numberOfItemsOnSale, int minNumberOfItems) {
         super(unitDescription, costPerUnit, numberOfItemsOnSale);
         this.minNumberOfItems = minNumberOfItems;
@@ -18,9 +13,11 @@ public class DiscountedItem extends Item {
     public int getMinNumberOfItems() {
         return minNumberOfItems;
     }
-
     public void setMinNumberOfItems(int minNumberOfItems) {
         this.minNumberOfItems = minNumberOfItems;
+    }
+    public double getDiscount() {
+        return discount;
     }
 
     //If there is a discount returns true else false
@@ -40,7 +37,7 @@ public class DiscountedItem extends Item {
         }
 
     }
-
+    //Print the Discounted item
     @Override
     public String toString() {
         if(IsDiscount()){

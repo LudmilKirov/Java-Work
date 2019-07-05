@@ -4,15 +4,20 @@ import inheritance.Employee;
 
 import java.util.Collections;
 import java.util.Comparator;
-
+//Make a program that add dates and orders and
+// prints the orders by the date in ascending order
 
 /*Pros and cons about Comparable and Comparator
-*  Comparable - it is used only for one object,comes intuitive for natural sorting order
-*  Comparator - it can be used for two objects,comes intuitive for customized sorting order*/
+
+*  Comparable - it is used only for one object
+* ,comes intuitive for natural sorting order
+*
+*  Comparator - it can be used for two objects
+* ,comes intuitive for customized sorting order*/
 
 public class Main {
     public static void main(String[] args) {
-
+        //Adding the date and the orders
         Date date=new Date(22,4,1992);
         Date date1=new Date(3,4,1992);
         Date date2=new Date(1,4,1992);

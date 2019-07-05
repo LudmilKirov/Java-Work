@@ -7,37 +7,33 @@ public class Disc implements Digital, Physical {
     private String genre;
     private double runningTimeInMinutes;
 
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getGenre() {
-        return genre;
-    }
-
-    public void setGenre(String genre) {
-        this.genre = genre;
-    }
-
-    public double getRunningTime() {
-        return runningTimeInMinutes;
-    }
-
-    public void setRunningTime(double runningTime) {
-        this.runningTimeInMinutes = runningTime;
-    }
-
+    //Constructor
     public Disc(String title, String genre, double runningTime) {
         this.title = title;
         this.genre = genre;
         this.runningTimeInMinutes = runningTime;
     }
+    //Getters and setters
+    private String getTitle() {
+        return title;
+    }
+    private void setTitle(String title) {
+        this.title = title;
+    }
+    private String getGenre() {
+        return genre;
+    }
+    private void setGenre(String genre) {
+        this.genre = genre;
+    }
+    private double getRunningTime() {
+        return runningTimeInMinutes;
+    }
+    private void setRunningTime(double runningTime) {
+        this.runningTimeInMinutes = runningTime;
+    }
 
+    //Output for the Disc
     @Override
     public String toString() {
         return
@@ -46,7 +42,6 @@ public class Disc implements Digital, Physical {
                 ", runningTimeInMinutes=" + runningTimeInMinutes
                ;
     }
-
 
     @Override
     public void Digital() {
